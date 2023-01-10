@@ -8,7 +8,7 @@
     
     <Records>
         <Record name="Header" description="Registro inicial, abertura do arquivo." >
-            <GroupOfFields>
+            <Fields>
                 <IdType name="CodigoRegistro"           length="1"   value="0" position="1" />
                 <Field  name="CodigoPortador"           length="3"   padding="ZERO_LEFT" />
                 <Field  name="NomePortador"             length="40"  />
@@ -26,7 +26,7 @@
                 <Field  name="CodigoMunicipio"          length="7"   />
                 <Field  name="filler"                   length="497" /> <!-- 897 para 1000 ou 497 para 600 -->
                 <Field  name="NumeroSequencialRegistro" length="4"   value="0001" padding="ZERO_LEFT" />
-            </GroupOfFields>
+            </Fields>
         </Record>
 
     </Records>

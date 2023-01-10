@@ -33,9 +33,9 @@ class LayoutReader {
             $obj->name        = trim( $record["@attributes"]["name"] );
             $obj->description = trim( $record["@attributes"]["description"] );
             
-            $obj->fields[] = LayoutReader::readField( $record["GroupOfFields"]["IdType"] );
+            $obj->fields[] = LayoutReader::readField( $record["Fields"]["IdType"] );
 
-            foreach( $record["GroupOfFields"]["Field"] as $field ){
+            foreach( $record["Fields"]["Field"] as $field ){
                 $obj->fields[] = LayoutReader::readField( $field );
             }
 

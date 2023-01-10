@@ -16,7 +16,7 @@
         
         <Records>
             <Record name="HeaderArquivo" description="Registro inicial, abertura do arquivo.">
-                <GroupOfFields>
+                <Fields>
                     <IdType name="CodigoRegistro"          length="1"   value="0" position="1" />
                     <Field name="CodigoPortador"           length="3"   padding="ZERO_LEFT" />
                     <Field name="NomePortador"             length="45"  />
@@ -25,22 +25,22 @@
                     <Field name="QuantidadeCartorios"      length="5"   padding="ZERO_LEFT" />
                     <Field name="Filler"                   length="55" />
                     <Field name="SequencialRegistro"       length="5"   value="00001" padding="ZERO_LEFT" />
-                </GroupOfFields>
+                </Fields>
             </Record>
             
             <Record name="HeaderCartorio" repeatable="true" description="Registro inicial, abertura do cartorio">
-                <GroupOfFields>
+                <Fields>
                     <IdType name="CodigoRegistro"          length="1"   value="1" position="1" />
                     <Field name="CodigoCartorio"           length="2"   padding="ZERO_LEFT" />
                     <Field name="Quantidade"               length="5"   padding="ZERO_LEFT" />
                     <Field name="CodigoMunicipio"          length="7"   padding="ZERO_LEFT" />
                     <Field name="Filler"                   length="107" />
                     <Field name="SequencialRegistro"       length="5"   value="00002" padding="ZERO_LEFT" />
-                </GroupOfFields>
+                </Fields>
             </Record>
             
             <Record name="TransacaoTitulo" repeatable="true">
-                <GroupOfFields>
+                <Fields>
                     <IdType name="CodigoRegistro"           length="1"  value="2" position="1" />
                     <Field  name="ProtocoloCRA"             length="10" padding="ZERO_LEFT" />
                     <Field  name="ProtocoloData"            length="8"  type="DATE" format="DDMMYYYY" />
@@ -52,21 +52,21 @@
                     <Field  name="Carteira"                 length="12" padding="ZERO_LEFT" />
                     <Field  name="Filler"                   length="8" />
                     <Field  name="NumeroSequencialRegistro" length="5"  padding="ZERO_LEFT" />
-                </GroupOfFields>
+                </Fields>
             </Record>
             
             <Record name="TraillerCartorio" repeatable="true" description="Registro final, fechamento do cartorio" >
-                <GroupOfFields>
+                <Fields>
                     <IdType name="CodigoRegistro"           length="1"   value="8" position="1" />
                     <Field  name="CodigoCartorio"           length="2"   padding="ZERO_LEFT" />
                     <Field  name="QuantidadeSeguranca"      length="5"   padding="ZERO_LEFT" />
                     <Field  name="Filler"                   length="114" />
                     <Field  name="NumeroSequencialRegistro" length="5"   padding="ZERO_LEFT" />
-                </GroupOfFields>
+                </Fields>
             </Record>
             
             <Record name="TraillerArquivo" description="Registro final, fechamento do arquivo." >
-                <GroupOfFields>
+                <Fields>
                     <IdType name="CodigoRegistro"           length="1"   value="9" position="1" />
                     <Field  name="CodigoPortador"           length="3"   padding="ZERO_LEFT" />
                     <Field  name="NomePortador"             length="45"  />
@@ -75,7 +75,7 @@
                     <Field  name="ValorSeguranca"           length="14"  type="BIGDECIMAL" format="DD" padding="ZERO_LEFT" />
                     <Field  name="Filler"                   length="46" />
                     <Field  name="NumeroSequencialRegistro" length="5"   padding="ZERO_LEFT" />
-                </GroupOfFields>
+                </Fields>
             </Record>
         </Records>
     </FlatFile>

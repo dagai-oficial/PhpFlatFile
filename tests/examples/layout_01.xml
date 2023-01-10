@@ -11,7 +11,7 @@
     
     <Records>
         <Record name="Header" description="Registro inicial, abertura do arquivo." >
-            <GroupOfFields>
+            <Fields>
                 <IdType name="CodigoRegistro"           length="1"   value="0" position="1" />
                 <Field  name="CodigoPortador"           length="3"   padding="ZERO_LEFT" />
                 <Field  name="NomePortador"             length="40"  />
@@ -29,11 +29,11 @@
                 <Field  name="CodigoMunicipio"          length="7"   />
                 <Field  name="Filler"                   length="497" /> <!-- 897 para 1000 ou 497 para 600 -->
                 <Field  name="NumeroSequencialRegistro" length="4"   value="0001" padding="ZERO_LEFT" />
-            </GroupOfFields>
+            </Fields>
         </Record>
 
         <Record name="TransacaoTitulo" repeatable="true">
-            <GroupOfFields>
+            <Fields>
                 <IdType name="CodigoRegistro"       length="1"  value="1" position="1" />
                 <Field  name="CodigoPortador"       length="3"  padding="ZERO_LEFT" />
                 <Field  name="AgenciaBeneficiario"  length="15" />
@@ -120,11 +120,11 @@
                 <Field  name="AgenciaOperadora"         length="5"   />
                 <Field  name="ComplementoRegistro"      length="213" />
                 <Field  name="NumeroSequencialRegistro" length="4"   padding="ZERO_LEFT" />
-            </GroupOfFields>
+            </Fields>
         </Record>
 
         <Record name="Trailler" description="Registro final, fechamento do arquivo." >
-            <GroupOfFields>
+            <Fields>
                 <IdType name="CodigoRegistro"           length="1"   value="9" position="1" />
                 <Field  name="CodigoPortador"           length="3"   padding="ZERO_LEFT" />
                 <Field  name="NomePortador"             length="40"  />
@@ -133,7 +133,7 @@
                 <Field  name="ValorSeguranca"           length="18"  padding="ZERO_LEFT" type="BIGDECIMAL" format="DD" />
                 <Field  name="Filler"                   length="521" /> <!-- 921 para 1000 ou 521 para 600 -->
                 <Field  name="NumeroSequencialRegistro" length="4"   padding="ZERO_LEFT" />
-            </GroupOfFields>
+            </Fields>
         </Record>
     </Records>
 </FlatFile>

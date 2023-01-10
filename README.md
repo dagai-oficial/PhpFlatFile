@@ -21,12 +21,12 @@ podemos representar esse arquivo da seguinte forma:
     
     <Records>
         <Record name="Pessoa" description="Conta de pessoa." >
-            <GroupOfFields>
+            <Fields>
                 <IdType name="Codigo"           length="1"  value="0" position="1" />
                 <Field  name="Nome"             length="23" />
                 <Field  name="DataDeNascimento" length="8"  type="DATE" format="DDMMYYYY" />
                 <Field  name="valor"            length="18" format="DD" padding="ZERO_LEFT" />
-            </GroupOfFields>
+            </Fields>
         </Record>
 
     </Records>
