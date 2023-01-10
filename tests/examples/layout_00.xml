@@ -6,7 +6,7 @@
         <description>Description</description>
     </layout>
     
-    <GroupOfRecords>
+    <Records>
         <Record name="Header" description="Registro inicial, abertura do arquivo." >
             <GroupOfFields>
                 <IdType name="CodigoRegistro"           length="1"   value="0" position="1" />
@@ -29,5 +29,5 @@
             </GroupOfFields>
         </Record>
 
-    </GroupOfRecords>
+    </Records>
 </FlatFile>

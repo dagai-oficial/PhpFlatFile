@@ -19,14 +19,14 @@ class LayoutReader {
         $layout->version     = trim( $xml->layout->version );
         $layout->description = trim( $xml->layout->description );
 
-        if( !is_array( $xml->GroupOfRecords->Record ) )
+        if( !is_array( $xml->Records->Record ) )
         {
-            $xml->GroupOfRecords->Record = [
-                $xml->GroupOfRecords->Record
+            $xml->Records->Record = [
+                $xml->Records->Record
             ];
         }
 
-        foreach( $xml->GroupOfRecords->Record as $record ){
+        foreach( $xml->Records->Record as $record ){
             $record = Util::toArray( $record );
             
             $obj = new Record();
