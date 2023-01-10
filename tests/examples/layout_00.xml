@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<FlatFile>
+    <layout>
+        <name>Name</name>
+        <version>1.0</version>
+        <description>Description</description>
+    </layout>
+    
+    <GroupOfRecords>
+        <Record name="Header" description="Registro inicial, abertura do arquivo." >
+            <GroupOfFields>
+                <IdType name="CodigoRegistro"           length="1"   value="0" position="1" />
+                <Field  name="CodigoPortador"           length="3"   padding="ZERO_LEFT" />
+                <Field  name="NomePortador"             length="40"  />
+                <Field  name="DataMovimento"            length="8"   type="DATE" format="DDMMYYYY" />
+                <Field  name="CodigoRemetente"          length="3"   />
+                <Field  name="CodigoDestinatario"       length="3"   />
+                <Field  name="CodigoTipo"               length="3"   />
+                <Field  name="NumeroSequencialRemessa"  length="6"   padding="ZERO_LEFT" />
+                <Field  name="QuantidadeRegistros"      length="4"   padding="ZERO_LEFT" />
+                <Field  name="filler"                   length="4"   value="0000" padding="ZERO_LEFT" />
+                <Field  name="filler"                   length="4"   value="0000" padding="ZERO_LEFT" />
+                <Field  name="filler"                   length="4"   value="0000" padding="ZERO_LEFT" />
+                <Field  name="CodigoAgencia"            length="6"   />
+                <Field  name="versaoLayout"             length="3"   value="050" />
+                <Field  name="CodigoMunicipio"          length="7"   />
+                <Field  name="filler"                   length="497" /> <!-- 897 para 1000 ou 497 para 600 -->
+                <Field  name="NumeroSequencialRegistro" length="4"   value="0001" padding="ZERO_LEFT" />
+            </GroupOfFields>
+        </Record>
+
+    </GroupOfRecords>
+</FlatFile>

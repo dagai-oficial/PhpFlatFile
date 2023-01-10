@@ -1,0 +1,19 @@
+{
+    "name": "dagai/php-flat-file",
+    "description": "API para trabalhar com arquivos padronizados",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Dagai\\PhpFlatFile\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "antonio-damaso",
+            "email": "antoniovldamaso@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    }
+}

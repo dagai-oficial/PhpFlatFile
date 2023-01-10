@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<FlatFile>
+    <layout>
+        <name>FEBRABAN - Retorno</name>
+        <version>Version 4.4, Published: 23/07/2014</version>
+        <description>
+            XML para funcionamento com o Jrimum.
+            Arquivo de Retorno com 600 bytes.
+        </description>
+    </layout>
+    
+    <GroupOfRecords>
+        <Record name="Header" description="Registro inicial, abertura do arquivo." >
+            <GroupOfFields>
+                <IdType name="CodigoRegistro"           length="1"   value="0" position="1" />
+                <Field  name="CodigoPortador"           length="3"   padding="ZERO_LEFT" />
+                <Field  name="NomePortador"             length="40"  />
+                <Field  name="DataMovimento"            length="8"   type="DATE" format="DDMMYYYY" />
+                <Field  name="CodigoRemetente"          length="3"   />
+                <Field  name="CodigoDestinatario"       length="3"   />
+                <Field  name="CodigoTipo"               length="3"   />
+                <Field  name="NumeroSequencialRemessa"  length="6"   padding="ZERO_LEFT" />
+                <Field  name="QuantidadeRegistros"      length="4"   padding="ZERO_LEFT" />
+                <Field  name="filler"                   length="4"   value="0000" padding="ZERO_LEFT" />
+                <Field  name="filler"                   length="4"   value="0000" padding="ZERO_LEFT" />
+                <Field  name="filler"                   length="4"   value="0000" padding="ZERO_LEFT" />
+                <Field  name="CodigoAgencia"            length="6"   />
+                <Field  name="versaoLayout"             length="3"   value="050" />
+                <Field  name="CodigoMunicipio"          length="7"   />
+                <Field  name="Filler"                   length="497" /> <!-- 897 para 1000 ou 497 para 600 -->
+                <Field  name="NumeroSequencialRegistro" length="4"   value="0001" padding="ZERO_LEFT" />
+            </GroupOfFields>
+        </Record>
+
+        <Record name="TransacaoTitulo" repeatable="true">
+            <GroupOfFields>
+                <IdType name="CodigoRegistro"       length="1"  value="1" position="1" />
+                <Field  name="CodigoPortador"       length="3"  padding="ZERO_LEFT" />
+                <Field  name="AgenciaBeneficiario"  length="15" />
+                <Field  name="filler"               length="45" />
+                
+                <!-- não devem ser utilizados -->
+                <Field  name="filler"               length="45" />
+                <Field  name="filler"               length="14" />
+                <Field  name="filler"               length="45" />
+                <Field  name="filler"               length="8"  value="0" padding="ZERO_LEFT" />
+                <Field  name="filler"               length="20" />
+                <Field  name="filler"               length="2"  />
+                
+                <Field  name="NossoNumero"          length="15" />
+                <Field  name="filler"               length="3"  />
+                <Field  name="filler"               length="11" />
+                <Field  name="filler"               length="8"  value="0" padding="ZERO_LEFT" />
+                <Field  name="filler"               length="8"  value="0" padding="ZERO_LEFT" />
+                <Field  name="TipoMoeda"            length="3"  value="001" />
+                <Field  name="ValorTitulo"          length="14" type="BIGDECIMAL" format="DD" />
+                <Field  name="SaldoTitulo"          length="14" type="BIGDECIMAL" format="DD" />
+                
+                <!-- não devem ser utilizados -->
+                <Field  name="filler"               length="20" />
+                <Field  name="filler"               length="1"  />
+                <Field  name="filler"               length="1"  />
+                <Field  name="filler"               length="1"  value="0" padding="ZERO_LEFT" />
+                <Field  name="filler"               length="45" />
+                <Field  name="filler"               length="3"  value="0" padding="ZERO_LEFT" />
+                <Field  name="filler"               length="14" value="0" padding="ZERO_LEFT" />
+                <Field  name="filler"               length="11" />
+                <Field  name="filler"               length="45" />
+                <Field  name="filler"               length="8"  value="0" padding="ZERO_LEFT" />
+                <Field  name="filler"               length="20" />
+                <Field  name="filler"               length="2"  />
+                
+                <Field  name="CodigoCartorio"         length="2"  />
+                <Field  name="ProtocoloCartorio"      length="10" />
+                <Field  name="TipoOcorrencia"         length="1"  />
+                <Field  name="DataProtocolo"          length="8"  type="DATE" format="DDMMYYYY" />
+                <Field  name="ValorCustaCartorio"     length="10" type="BIGDECIMAL" format="DD" />
+                <Field  name="filler"                 length="1"  />
+                <Field  name="DataOcorrencia"         length="8"  type="DATE" format="DDMMYYYY" />
+                <Field  name="CodigoIrreguladidade"   length="2"  />
+                <Field  name="filler"                 length="20" />
+                <Field  name="ValorCustaDistribuidor" length="10" type="BIGDECIMAL" format="DD" />
+                <Field  name="RegistroDistribuicao"   length="6"  />
+                <Field  name="ValorGravacao"          length="10" type="BIGDECIMAL" format="DD" />
+                
+                <!-- não devem ser utilizados -->
+                <Field  name="filler"                 length="5"  value="0" padding="ZERO_LEFT" />
+                <Field  name="filler"                 length="15" value="0" padding="ZERO_LEFT" />
+                <Field  name="filler"                 length="3"  value="0" padding="ZERO_LEFT" />
+                <Field  name="filler"                 length="1"  value="0" padding="ZERO_LEFT" />
+                
+                <Field  name="CodigoIrreguladidadeComplemento" length="8"  />
+                
+                <Field  name="filler"                 length="1"  />
+                <Field  name="filler"                 length="1"  />
+                
+                <Field  name="ValorDispesas"          length="10" type="BIGDECIMAL" format="DD" />
+                
+                <Field  name="filler"                 length="10" value="0" padding="ZERO_LEFT" />
+                <Field  name="filler"                 length="8"  value="0" padding="ZERO_LEFT" />
+                <Field  name="filler"                 length="14" />
+                <Field  name="filler"                 length="1"  />
+                <Field  name="filler"                 length="1"  />
+                
+                <Field  name="filler"                 length="14" />
+                <Field  name="filler"                 length="45" />
+                <Field  name="filler"                 length="20" />
+                <Field  name="filler"                 length="8"  />
+                <Field  name="filler"                 length="20" />
+                <Field  name="filler"                 length="2"  />
+                
+                <Field  name="filler"                 length="15" />
+                <Field  name="CodigoCartorioNota"     length="3"  />
+                <Field  name="ValorCustaFirma"        length="10" type="BIGDECIMAL" format="DD" />
+                
+                <Field  name="TarjaCheque01"          length="8"  />
+                <Field  name="TarjaCheque02"          length="10" />
+                <Field  name="TarjaCheque03"          length="12" />
+                
+                <Field  name="AgenciaOperadora"         length="5"   />
+                <Field  name="ComplementoRegistro"      length="213" />
+                <Field  name="NumeroSequencialRegistro" length="4"   padding="ZERO_LEFT" />
+            </GroupOfFields>
+        </Record>
+
+        <Record name="Trailler" description="Registro final, fechamento do arquivo." >
+            <GroupOfFields>
+                <IdType name="CodigoRegistro"           length="1"   value="9" position="1" />
+                <Field  name="CodigoPortador"           length="3"   padding="ZERO_LEFT" />
+                <Field  name="NomePortador"             length="40"  />
+                <Field  name="DataRetorno"              length="8"   type="DATE" format="DDMMYYYY" />
+                <Field  name="QuantidadeSeguranca"      length="5"   padding="ZERO_LEFT" />
+                <Field  name="ValorSeguranca"           length="18"  padding="ZERO_LEFT" type="BIGDECIMAL" format="DD" />
+                <Field  name="Filler"                   length="521" /> <!-- 921 para 1000 ou 521 para 600 -->
+                <Field  name="NumeroSequencialRegistro" length="4"   padding="ZERO_LEFT" />
+            </GroupOfFields>
+        </Record>
+    </GroupOfRecords>
+</FlatFile>

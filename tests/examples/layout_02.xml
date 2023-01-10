@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<txg:Texgit xmlns:txg="http://gilmatryx.googlepages.com/Texgit"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://gilmatryx.googlepages.com/Texgit file:////home/gilmar/WORKSPACE/TexgitSchema.xsd"
+    version="1.0-academic">
+
+    <FlatFile>
+        <layout>
+            <name>FEBRABAN - Solicação</name>
+            <version>Version 2.1, Published: 02/02/2007</version>
+            <description>
+                XML para funcionamento com o Jrimum.
+                Arquivo de Desistência, Cancelamento e Autorização de Cancelamento
+            </description>
+        </layout>
+        
+        <GroupOfRecords>
+            <Record name="HeaderArquivo" description="Registro inicial, abertura do arquivo.">
+                <GroupOfFields>
+                    <IdType name="CodigoRegistro"          length="1"   value="0" position="1" />
+                    <Field name="CodigoPortador"           length="3"   padding="ZERO_LEFT" />
+                    <Field name="NomePortador"             length="45"  />
+                    <Field name="DataMovimento"            length="8"   type="DATE" format="DDMMYYYY" />
+                    <Field name="QuantidadeTitulos"        length="5"   padding="ZERO_LEFT" />
+                    <Field name="QuantidadeCartorios"      length="5"   padding="ZERO_LEFT" />
+                    <Field name="Filler"                   length="55" />
+                    <Field name="SequencialRegistro"       length="5"   value="00001" padding="ZERO_LEFT" />
+                </GroupOfFields>
+            </Record>
+            
+            <Record name="HeaderCartorio" repeatable="true" description="Registro inicial, abertura do cartorio">
+                <GroupOfFields>
+                    <IdType name="CodigoRegistro"          length="1"   value="1" position="1" />
+                    <Field name="CodigoCartorio"           length="2"   padding="ZERO_LEFT" />
+                    <Field name="Quantidade"               length="5"   padding="ZERO_LEFT" />
+                    <Field name="CodigoMunicipio"          length="7"   padding="ZERO_LEFT" />
+                    <Field name="Filler"                   length="107" />
+                    <Field name="SequencialRegistro"       length="5"   value="00002" padding="ZERO_LEFT" />
+                </GroupOfFields>
+            </Record>
+            
+            <Record name="TransacaoTitulo" repeatable="true">
+                <GroupOfFields>
+                    <IdType name="CodigoRegistro"           length="1"  value="2" position="1" />
+                    <Field  name="ProtocoloCRA"             length="10" padding="ZERO_LEFT" />
+                    <Field  name="ProtocoloData"            length="8"  type="DATE" format="DDMMYYYY" />
+                    <Field  name="TituloNumero"             length="11" padding="ZERO_LEFT" />
+                    <Field  name="DevedorNome"              length="45" />
+                    <Field  name="TituloValor"              length="14" type="BIGDECIMAL" format="DD" padding="ZERO_LEFT" />
+                    <Field  name="Solicitacao"              length="1"  />  <!-- S para desistencias ; C para cancelamento ; A para autorização -->
+                    <Field  name="Agencia"                  length="12" padding="ZERO_LEFT" />
+                    <Field  name="Carteira"                 length="12" padding="ZERO_LEFT" />
+                    <Field  name="Filler"                   length="8" />
+                    <Field  name="NumeroSequencialRegistro" length="5"  padding="ZERO_LEFT" />
+                </GroupOfFields>
+            </Record>
+            
+            <Record name="TraillerCartorio" repeatable="true" description="Registro final, fechamento do cartorio" >
+                <GroupOfFields>
+                    <IdType name="CodigoRegistro"           length="1"   value="8" position="1" />
+                    <Field  name="CodigoCartorio"           length="2"   padding="ZERO_LEFT" />
+                    <Field  name="QuantidadeSeguranca"      length="5"   padding="ZERO_LEFT" />
+                    <Field  name="Filler"                   length="114" />
+                    <Field  name="NumeroSequencialRegistro" length="5"   padding="ZERO_LEFT" />
+                </GroupOfFields>
+            </Record>
+            
+            <Record name="TraillerArquivo" description="Registro final, fechamento do arquivo." >
+                <GroupOfFields>
+                    <IdType name="CodigoRegistro"           length="1"   value="9" position="1" />
+                    <Field  name="CodigoPortador"           length="3"   padding="ZERO_LEFT" />
+                    <Field  name="NomePortador"             length="45"  />
+                    <Field  name="DataMovimento"            length="8"   type="DATE" format="DDMMYYYY" />
+                    <Field  name="QuantidadeSeguranca"      length="5"   padding="ZERO_LEFT" />
+                    <Field  name="ValorSeguranca"           length="14"  type="BIGDECIMAL" format="DD" padding="ZERO_LEFT" />
+                    <Field  name="Filler"                   length="46" />
+                    <Field  name="NumeroSequencialRegistro" length="5"   padding="ZERO_LEFT" />
+                </GroupOfFields>
+            </Record>
+        </GroupOfRecords>
+    </FlatFile>
+
+</txg:Texgit>
